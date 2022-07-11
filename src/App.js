@@ -10,11 +10,14 @@ import ConditionRender1 from "./FUNDAMENTALS/conditional_render_1";
 import ConditionRender3 from "./FUNDAMENTALS/conditional_render_3";
 import LifeCycle1 from "./FUNDAMENTALS/lifecycleMethods_1";
 import LifeCycle2 from "./FUNDAMENTALS/lifecycleMethods_2";
+import LifeCycle3 from "./FUNDAMENTALS/lifecycleMethods_3";
+import Forms1 from "./FUNDAMENTALS/forms_1";
+import Forms2 from "./FUNDAMENTALS/forms_2";
 
 function App() {
     return (
         <div className="App">
-            <LifeCycle2 />
+            <Forms2 />
         </div>
     );
 }

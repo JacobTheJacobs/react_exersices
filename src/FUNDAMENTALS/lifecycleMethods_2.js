@@ -1,8 +1,6 @@
 import * as React from "react";
 
 import "./styles.css";
-// display "Loading ..." for 5 seconds and then display the component..
-
 export default class LifeCycle2 extends React.Component {
     constructor(props) {
         super(props);
@@ -17,13 +15,12 @@ export default class LifeCycle2 extends React.Component {
             this.setState({
                 loaded: true,
             });
-            alert(this.loaded);
+
+            this.loaded = true;
         }, 5000);
     }
 
-    componentWillUnmount() {
-        alert("unmounting");
-    }
+    componentWillUnmount() {}
 
     changeColor = () => {
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -51,7 +48,13 @@ export default class LifeCycle2 extends React.Component {
                         </button>
                     </div>
                 ) : (
-                    <h1>Loading</h1>
+                    <>
+                        <h1>Loading</h1>
+                        <img
+                            src="https://i.stack.imgur.com/ATB3o.gif"
+                            alt="loading"
+                        />
+                    </>
                 )}
             </>
         );

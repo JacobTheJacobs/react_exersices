@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import "./styles.css";
-
 export default class LifeCycle1 extends React.Component {
     constructor(props) {
         super(props);
