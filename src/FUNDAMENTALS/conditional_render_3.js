@@ -99,8 +99,7 @@ export default function ConditionRender3() {
                     <div
                         id={c.uuid}
                         style={{
-                            position: "absolute",
-                            right: 20,
+                            marginLeft: "19rem",
                             marginTop: "10px",
                             cursor: "pointer",
                         }}

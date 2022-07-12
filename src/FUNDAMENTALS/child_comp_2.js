@@ -46,7 +46,7 @@ var grids = {
     },
 };
 
-export default function Books() {
+export default function ChildComp2() {
     return (
         <div style={grids.parentGrid}>
             <div style={stylingObject.header && grids.grid1}>

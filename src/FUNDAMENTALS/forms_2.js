@@ -2,9 +2,6 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import "./styles.css";
 
-//now add also add button. By clicking the button, popup will be displayed for adding a new person.
-//Make the list sorted.
-
 const Modal = ({ handleClose, show, children, addNew, addContact }) => {
     const [name, setName] = useState("");
     const [age, setAge] = useState("");
@@ -29,14 +26,17 @@ const Modal = ({ handleClose, show, children, addNew, addContact }) => {
             <section className="modal-main">
                 {addNew ? (
                     <>
+                        Name:
                         <input
                             name="name"
                             onChange={(e) => setName(e.target.value)}
                         />
+                        Age:
                         <input
                             name="age"
                             onChange={(e) => setAge(e.target.value)}
                         />
+                        Image:
                         <input
                             name="image"
                             onChange={(e) => setImage(e.target.value)}
@@ -147,8 +147,7 @@ export default function Forms2() {
                     <div
                         id={c.uuid}
                         style={{
-                            position: "absolute",
-                            right: 20,
+                            marginLeft: "19rem",
                             marginTop: "10px",
                             cursor: "pointer",
                         }}
