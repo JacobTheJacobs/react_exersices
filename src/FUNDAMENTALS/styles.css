@@ -142,7 +142,11 @@ nav {
 }
 
 /*Add*/
+.add-input-label{
+  display:block;
+}
 .add-input{
+  display:inline-block;
   width: 80%;
   margin: 5px;
 }

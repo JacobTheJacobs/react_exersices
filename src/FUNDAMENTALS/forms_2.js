@@ -26,13 +26,13 @@ const Modal = ({ handleClose, show, children, addNew, addContact }) => {
             <section className="modal-main" style={{ height: "200px" }}>
                 {addNew ? (
                     <>
-                        Name:
+                        <div className="add-input-label"> Name:</div>
                         <input
                             className="add-input"
                             name="name"
                             onChange={(e) => setName(e.target.value)}
                         />
-                        Age:
+                        <div className="add-input-label"> Age:</div>
                         <select
                             style={{ marginLeft: "25px" }}
                             className="add-input"
@@ -43,7 +43,7 @@ const Modal = ({ handleClose, show, children, addNew, addContact }) => {
                             <option value="30">30</option>
                             <option value="40">40</option>
                         </select>
-                        Image:
+                        <div className="add-input-label"> Image:</div>
                         <input
                             className="add-input"
                             name="image"
@@ -63,8 +63,8 @@ const Modal = ({ handleClose, show, children, addNew, addContact }) => {
                 <div
                     style={{
                         position: "relative",
-                        left: "340px",
-                        bottom: "160px",
+                        left: "100%",
+                        bottom: "220px",
                         cursor: "pointer",
                     }}
                     onClick={(e) => {

@@ -15,8 +15,8 @@ const Modal = ({ handleClose, show, children }) => {
                 <div
                     style={{
                         position: "relative",
-                        left: "300px",
-                        bottom: "80px",
+                        left: "90%",
+                        bottom: "90px",
                         cursor: "pointer",
                     }}
                     onClick={(e) => {
