@@ -47,36 +47,18 @@ export default function StateEvent7() {
                     <img
                         style={{
                             borderRadius: "50%",
-                            position: "relative",
                             width: "50px",
+                            height: "50px",
+                            margin: "10px",
+                            position: "relative"
+                            
                         }}
                         src={c.image}
                     />
-                    <div
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                            left: 70,
-                            bottom: 50,
-                            fontSize: "150%",
-                            fontWeight: "900",
-                            color: "blue",
-                        }}
-                    >
+                    <div>
                         {c.name}
                     </div>
                     <div
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                            left: 70,
-                            bottom: 40,
-                            fontSize: "100%",
-                            fontWeight: "900",
-                            color: "green",
-                        }}
                     >
                         {c.age}
                     </div>

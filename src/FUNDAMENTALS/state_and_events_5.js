@@ -22,12 +22,15 @@ export default function StateEvent5() {
     };
     return (
         <div>
-            <div>{counter}</div>
-            <button onClick={(e) => increment()}>+</button>
+            <h1 className="title">Simple Counter</h1>
+            <div className="card-body">
+            <div className="title">{counter}</div>
+            <button className="counter-button" onClick={(e) => increment()}>+</button>
 
-            <button onClick={(e) => decrement()}>-</button>
+            <button className="counter-button" onClick={(e) => decrement()}>-</button>
 
-            <button onClick={(e) => clear()}>clear</button>
+            <button className="counter-button" onClick={(e) => clear()}>clear</button>
+            </div>
         </div>
     );
 }

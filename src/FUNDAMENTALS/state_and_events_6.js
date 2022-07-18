@@ -16,18 +16,24 @@ export default function StateEvent6() {
 
     return (
         <div>
-            <h1>TODO LIST</h1>
+            {item.length>0  ?
+             <p>each time the button clicked the item which is not
+                 blank gets pushed to the array 
+                 in which the item get stored until page gets refreshed</p>:null}
+            <h1 className="title">ToDo List</h1>
+            <div className="card-body">
             <form onSubmit={(e) => addItem(e)}>
                 <input
                     name="input"
                     placeholder="enter task"
                     onChange={(e) => setItem(e.target.value)}
                 />
-                <button type="submit">add</button>
+                <button style={{height:"25px"}}className="counter-button"type="submit">add</button>
             </form>
             {toDoList.map((todo, index) => (
                 <div key={index}>{todo}</div>
             ))}
+            </div>
         </div>
     );
 }

@@ -20,15 +20,13 @@ export default function ConditionRender1() {
     };
 
     return (
+        <div>
+            <h1 className="title">Menu</h1>
         <div
-            style={{
-                display: "block",
-                margin: "auto",
-                width: "30%",
-            }}
+            className="card-body"
         >
             <button
-                style={{ margin: "5px" }}
+                className="card-button"
                 onClick={(e) => {
                     Home(e);
                 }}
@@ -36,6 +34,7 @@ export default function ConditionRender1() {
                 Home
             </button>
             <button
+             className="card-button"
                 onClick={(e) => {
                     About(e);
                 }}
@@ -43,10 +42,14 @@ export default function ConditionRender1() {
                 About
             </button>
 
-            <div>
-                {homePage ? <div>Home </div> : null}
-                {aboutPage ? <div>About </div> : null}
+            <div className="card-text">
+                {homePage ? <div className="title">Home </div> : null}
+                {aboutPage ? <div className="title">About </div> : null}
+                
             </div>
         </div>
+
+        </div>
+   
     );
 }

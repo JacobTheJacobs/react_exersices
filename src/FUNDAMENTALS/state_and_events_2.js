@@ -7,7 +7,7 @@ export default function StateEvent2() {
     const [q, setQoute] = useState("");
     const [color, setColor] = useState("");
 
-    const createNUmber = () => {
+    const randomQoute = () => {
         const min = 0;
         const max = 6;
         const rand = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -25,14 +25,22 @@ export default function StateEvent2() {
 
     useEffect(() => {}, [q]);
     return (
-        <div>
-            <button onClick={(e) => createNUmber()}>random qoute</button>
+<>
+<h1 className="title">Button BG</h1>
 
-            <button onClick={(e) => randomColor()}>random color</button>
+<div className="card-body">
+<h5>Press the button</h5>
 
-            <h5 style={{ backgroundColor: color }}>
-                {q !== "" ? q.quote : null}
-            </h5>
-        </div>
+<button className="card-button" onClick={(e) => randomColor()}>random color</button><br/><br/>
+<button className="card-button" onClick={(e) => randomQoute()}>random qoute</button>
+<h5  style={{backgroundColor:color}}>
+    {q !== "" ? <div className="card-text">
+        <div >
+            {q.quote}</div>
+            <div style={{fontWeight: "bold"}}>-{q.cite}</div>
+            </div> : null}
+</h5>
+</div>
+</>
     );
 }

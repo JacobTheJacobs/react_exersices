@@ -37,8 +37,9 @@ export default function ConditionRender2() {
     }, []);
     return (
         <div>
+            <h1 className="title">Navigation</h1>
             <nav>
-                {(toggleMenu || screenWidth > 500) && (
+                {(toggleMenu || screenWidth > 500) ? (
                     <ul className="list">
                         <li
                             className="items"
@@ -65,15 +66,15 @@ export default function ConditionRender2() {
                             Contact
                         </li>
                     </ul>
-                )}
-                <button
-                    onClick={() => {
-                        setToggleMenu(!toggleMenu);
-                    }}
-                    className="btn"
-                >
-                    BTN
-                </button>
+                ):     <button
+                onClick={() => {
+                    setToggleMenu(!toggleMenu);
+                }}
+                className="card-button"
+            >
+                Hamburger
+            </button>}
+           
             </nav>
             <div
                 style={{

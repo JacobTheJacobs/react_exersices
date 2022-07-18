@@ -24,16 +24,17 @@ function App() {
         <div className="App">
             {/**card component */}
 
-            <div className="card">
+            <div className="">
                 <div className="card-header">
                     <h3>Fundamentals</h3>
                 </div>
-                <div className="card-body">
+                <div className="">
                     <div className="row">
-                        <div className="col-md-6">
+                        {/*   <div className="col-md-6">
                             <QouteList />
                             <ProductList />
-                        </div>
+                        </div>*/ }
+                     
                         <div className="col-md-6">
                             <StateEvent1 />
                             <hr />

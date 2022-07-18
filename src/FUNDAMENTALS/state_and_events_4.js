@@ -13,8 +13,11 @@ export default function StateEvent4() {
 
     return (
         <div>
-            <div>{counter}</div>
-            <button onClick={(e) => increment()}>Click</button>
+            <h1 className="title">Click Count</h1>
+            <div className="card-body"> 
+             <div className="title">{counter}</div>
+            <button className="card-button" onClick={(e) => increment()}>Click</button></div>
+          
         </div>
     );
 }
