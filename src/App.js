@@ -24,18 +24,12 @@ function App() {
         <div className="App">
             {/**card component */}
 
-            <div className="">
-                <div className="card-header">
-                    <h3>Fundamentals</h3>
-                </div>
-                <div className="">
+            <div>
+                <div className="card-header"></div>
+                <div>
                     <div className="row">
-                        {/*   <div className="col-md-6">
-                            <QouteList />
-                            <ProductList />
-                        </div>*/ }
-                     
                         <div className="col-md-6">
+                            <h1>CONDITIONAL RENDERING</h1>
                             <StateEvent1 />
                             <hr />
                             <StateEvent2 />

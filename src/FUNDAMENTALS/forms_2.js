@@ -23,33 +23,48 @@ const Modal = ({ handleClose, show, children, addNew, addContact }) => {
 
     return (
         <div className={showHideClassName}>
-            <section className="modal-main">
+            <section className="modal-main" style={{ height: "200px" }}>
                 {addNew ? (
                     <>
                         Name:
                         <input
+                            className="add-input"
                             name="name"
                             onChange={(e) => setName(e.target.value)}
                         />
                         Age:
-                        <input
-                            name="age"
+                        <select
+                            style={{ marginLeft: "25px" }}
+                            className="add-input"
                             onChange={(e) => setAge(e.target.value)}
-                        />
+                            value={age}
+                        >
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                        </select>
                         Image:
                         <input
+                            className="add-input"
                             name="image"
                             onChange={(e) => setImage(e.target.value)}
                         />
-                        <button onClick={(e) => handleSubmit(e)}>Add</button>
+                        <button
+                            style={{ width: "90%", margin: "5px" }}
+                            className="card-button"
+                            onClick={(e) => handleSubmit(e)}
+                        >
+                            Add
+                        </button>
                     </>
                 ) : (
                     children
                 )}
                 <div
                     style={{
-                        marginLeft: " absolute",
-                        marginRight: "0",
+                        position: "relative",
+                        left: "340px",
+                        bottom: "160px",
                         cursor: "pointer",
                     }}
                     onClick={(e) => {
@@ -140,85 +155,89 @@ export default function Forms2() {
 
     return (
         <div>
-            <h1> {contacts.length} people in the list</h1>
-            <button onClick={toggle2}>Add new person</button>
-            {contacts.map((c, index) => (
-                <div key={index}>
-                    <div
-                        id={c.uuid}
-                        style={{
-                            marginLeft: "19rem",
-                            marginTop: "10px",
-                            cursor: "pointer",
-                        }}
-                        onClick={(e) => {
-                            deleteContact(e);
-                        }}
-                    >
-                        X
-                    </div>{" "}
-                    <Modal
-                        addContact={addContact}
-                        addNew={addNew}
-                        show={show}
-                        handleClose={hideModal}
-                    >
-                        <p>{name}</p>
-                        <p>{age}</p>
-                    </Modal>
-                    <img
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                        }}
-                        onClick={() => {
-                            toggle(c);
-                        }}
-                        src={c.image}
-                    />
+            <h1 className="title"> {contacts.length} People List 4</h1>
+            <div className="card-body">
+                <button className="card-button" onClick={toggle2}>
+                    Add new person
+                </button>
+                {contacts.map((c, index) => (
                     <div
                         style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                            left: 70,
-                            bottom: 50,
-                            fontSize: "150%",
-                            fontWeight: "900",
-                            color: "blue",
+                            textAlign: "left",
+                            marginLeft: "10%",
+                            marginTop: "5%",
                         }}
+                        key={index}
                     >
-                        {c.name}
+                        <div
+                            id={c.uuid}
+                            style={{
+                                position: "relative",
+                                left: "80%",
+                                top: "30px",
+                                cursor: "pointer",
+                            }}
+                            onClick={(e) => {
+                                deleteContact(e);
+                            }}
+                        >
+                            X
+                        </div>{" "}
+                        <Modal
+                            addContact={addContact}
+                            addNew={addNew}
+                            show={show}
+                            handleClose={hideModal}
+                        >
+                            <p>{name}</p>
+                            <p>{age}</p>
+                        </Modal>
+                        <img
+                            style={{
+                                borderRadius: "50%",
+                                width: "70px",
+                                height: "70px",
+                                boxShadow: "0px 0px 10px #000",
+                            }}
+                            src={c.image}
+                            onClick={() => {
+                                toggle(c);
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "relative",
+                                bottom: "60px",
+                                left: "90px",
+                                fontWeight: "bold",
+                                fontSize: "1.2rem",
+                                color: "rgb(2, 101, 134)",
+                            }}
+                        >
+                            {c.name}
+                        </div>
+                        <div
+                            style={{
+                                position: "relative",
+                                bottom: "60px",
+                                left: "90px",
+                                color: "grey",
+                            }}
+                        >
+                            {c.age}
+                        </div>
                     </div>
-                    <div
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                            left: 70,
-                            bottom: 40,
-                            fontSize: "100%",
-                            fontWeight: "900",
-                            color: "green",
-                        }}
-                    >
-                        {c.age}
-                    </div>
-                </div>
-            ))}
-            <button
-                style={{
-                    display: "block",
-                    margin: "auto",
-                    width: "40%",
-                }}
-                onClick={(e) => {
-                    clearAll(e);
-                }}
-            >
-                Clear all
-            </button>
+                ))}
+                <button
+                    className="card-button"
+                    style={{ width: "80%" }}
+                    onClick={(e) => {
+                        clearAll(e);
+                    }}
+                >
+                    Clear all
+                </button>
+            </div>
         </div>
     );
 }

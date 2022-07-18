@@ -47,73 +47,76 @@ export default function StateEvent8() {
 
     return (
         <div>
-            <h1> {contacts.length} people in the list</h1>
+            <h1 className="title"> {contacts.length} people in the list</h1>
 
-            {contacts.map((c, index) => (
-                <div key={index}>
+            <div className="card-body">
+                {contacts.map((c, index) => (
                     <div
-                        id={c.uuid}
+                        key={index}
                         style={{
-                            marginLeft: "19rem",
-                            marginTop: "10px",
-                            cursor: "pointer",
-                        }}
-                        onClick={(e) => {
-                            deleteContact(e);
+                            textAlign: "left",
+                            marginLeft: "10%",
+                            marginTop: "5%",
                         }}
                     >
-                        X
-                    </div>{" "}
-                    <img
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                        }}
-                        src={c.image}
-                    />
-                    <div
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                            left: 70,
-                            bottom: 50,
-                            fontSize: "150%",
-                            fontWeight: "900",
-                            color: "blue",
-                        }}
-                    >
-                        {c.name}
+                        <div
+                            id={c.uuid}
+                            style={{
+                                position: "relative",
+                                left: "80%",
+                                top: "30px",
+                                cursor: "pointer",
+                            }}
+                            onClick={(e) => {
+                                deleteContact(e);
+                            }}
+                        >
+                            X
+                        </div>{" "}
+                        <img
+                            style={{
+                                borderRadius: "50%",
+                                width: "70px",
+                                height: "70px",
+                                boxShadow: "0px 0px 10px #000",
+                            }}
+                            src={c.image}
+                            className="list-img"
+                        />
+                        <div
+                            style={{
+                                position: "relative",
+                                bottom: "60px",
+                                left: "90px",
+                                fontWeight: "bold",
+                                fontSize: "1.2rem",
+                                color: "rgb(2, 101, 134)",
+                            }}
+                        >
+                            {c.name}
+                        </div>
+                        <div
+                            style={{
+                                position: "relative",
+                                bottom: "60px",
+                                left: "90px",
+                                color: "grey",
+                            }}
+                        >
+                            {c.age}
+                        </div>
                     </div>
-                    <div
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                            left: 70,
-                            bottom: 40,
-                            fontSize: "100%",
-                            fontWeight: "900",
-                            color: "green",
-                        }}
-                    >
-                        {c.age}
-                    </div>
-                </div>
-            ))}
-            <button
-                style={{
-                    display: "block",
-                    margin: "auto",
-                    width: "40%",
-                }}
-                onClick={(e) => {
-                    clearAll(e);
-                }}
-            >
-                Clear all
-            </button>
+                ))}
+                <button
+                    className="card-button"
+                    style={{ width: "80%" }}
+                    onClick={(e) => {
+                        clearAll(e);
+                    }}
+                >
+                    Clear all
+                </button>
+            </div>
         </div>
     );
 }

@@ -15,19 +15,19 @@ export default function StateEvent7() {
         },
         {
             uuid: 1,
-            name: "Betty",
+            name: "Ketty",
             age: 83,
             image: "https://media.moddb.com/images/members/5/4550/4549205/duck.jpg",
         },
         {
             uuid: 0,
-            name: "Betty",
+            name: "Setty",
             age: 83,
             image: "https://i.pinimg.com/custom_covers/222x/636415059782460318_1594662723.jpg",
         },
         {
             uuid: 0,
-            name: "Betty",
+            name: "Letty",
             age: 83,
             image: "http://pm1.narvii.com/7119/b0abdf491cffde4bdf95850956c1b15a5591a4b5r1-712-707v2_uhq.jpg",
         },
@@ -39,37 +39,60 @@ export default function StateEvent7() {
 
     return (
         <div>
-            <h1> {contacts.length} people in the list</h1>
+            <h1 className="title"> {contacts.length} People List 1</h1>
 
-            {contacts.map((c, index) => (
-                <div key={index}>
-                    {" "}
-                    <img
-                        style={{
-                            borderRadius: "50%",
-                            width: "50px",
-                            height: "50px",
-                            margin: "10px",
-                            position: "relative"
-                            
-                        }}
-                        src={c.image}
-                    />
-                    <div>
-                        {c.name}
-                    </div>
+            <div className="card-body">
+                {" "}
+                {contacts.map((c, index) => (
                     <div
+                        style={{
+                            textAlign: "left",
+                            marginLeft: "10%",
+                            marginTop: "5%",
+                        }}
+                        className="list-group "
+                        key={index}
                     >
-                        {c.age}
+                        {" "}
+                        <img
+                            style={{
+                                borderRadius: "50%",
+                                width: "70px",
+                                height: "70px",
+                                boxShadow: "0px 0px 10px #000",
+                            }}
+                            src={c.image}
+                            className="list-img "
+                        />
+                        <div
+                            style={{
+                                position: "relative",
+                                bottom: "60px",
+                                left: "90px",
+                                fontWeight: "bold",
+                                fontSize: "1.2rem",
+                                color: "rgb(2, 101, 134)",
+                            }}
+                        >
+                            {c.name}
+                        </div>
+                        <div
+                            style={{
+                                position: "relative",
+                                bottom: "60px",
+                                left: "90px",
+                                color: "grey",
+                            }}
+                        >
+                            {c.age} years
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+
             <button
-                style={{
-                    display: "block",
-                    margin: "auto",
-                    width: "40%",
-                }}
+                className="card-button"
+                style={{ width: "80%" }}
                 onClick={(e) => {
                     clearAll(e);
                 }}

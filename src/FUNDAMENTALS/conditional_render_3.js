@@ -14,8 +14,9 @@ const Modal = ({ handleClose, show, children }) => {
                 {children}
                 <div
                     style={{
-                        marginLeft: " absolute",
-                        marginRight: "0",
+                        position: "relative",
+                        left: "300px",
+                        bottom: "80px",
                         cursor: "pointer",
                     }}
                     onClick={(e) => {
@@ -87,82 +88,83 @@ export default function ConditionRender3() {
 
     return (
         <div>
-            <h1> {contacts.length} people in the list</h1>
-
-            {contacts.map((c, index) => (
-                <div
-                    key={index}
-                    onClick={() => {
-                        toggle(c);
+            <h1> {contacts.length} People List 3</h1>
+            <div className="card-body">
+                {contacts.map((c, index) => (
+                    <div
+                        style={{
+                            textAlign: "left",
+                            marginLeft: "10%",
+                            marginTop: "5%",
+                        }}
+                        key={index}
+                        className="list-group "
+                        onClick={() => {
+                            toggle(c);
+                        }}
+                    >
+                        <div
+                            id={c.uuid}
+                            style={{
+                                position: "relative",
+                                left: "80%",
+                                top: "30px",
+                                cursor: "pointer",
+                            }}
+                            onClick={(e) => {
+                                deleteContact(e);
+                            }}
+                        >
+                            X
+                        </div>{" "}
+                        <Modal show={show} handleClose={hideModal}>
+                            <p>{name}</p>
+                            <p>{age}</p>
+                        </Modal>
+                        <img
+                            style={{
+                                borderRadius: "50%",
+                                width: "70px",
+                                height: "70px",
+                                boxShadow: "0px 0px 10px #000",
+                            }}
+                            className="list-img "
+                            src={c.image}
+                        />
+                        <div
+                            style={{
+                                position: "relative",
+                                bottom: "60px",
+                                left: "90px",
+                                fontWeight: "bold",
+                                fontSize: "1.2rem",
+                                color: "rgb(2, 101, 134)",
+                            }}
+                        >
+                            {c.name}
+                        </div>
+                        <div
+                            style={{
+                                position: "relative",
+                                bottom: "60px",
+                                left: "90px",
+                                color: "grey",
+                            }}
+                        >
+                            {c.age}
+                        </div>
+                    </div>
+                ))}
+                <button
+                    className="card-button"
+                    style={{ width: "80%" }}
+                    onClick={(e) => {
+                        clearAll(e);
                     }}
                 >
-                    <div
-                        id={c.uuid}
-                        style={{
-                            marginLeft: "19rem",
-                            marginTop: "10px",
-                            cursor: "pointer",
-                        }}
-                        onClick={(e) => {
-                            deleteContact(e);
-                        }}
-                    >
-                        X
-                    </div>{" "}
-                    <Modal show={show} handleClose={hideModal}>
-                        <p>{name}</p>
-                        <p>{age}</p>
-                    </Modal>
-                    <img
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                        }}
-                        src={c.image}
-                    />
-                    <div
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                            left: 70,
-                            bottom: 50,
-                            fontSize: "150%",
-                            fontWeight: "900",
-                            color: "blue",
-                        }}
-                    >
-                        {c.name}
-                    </div>
-                    <div
-                        style={{
-                            borderRadius: "50%",
-                            position: "relative",
-                            width: "50px",
-                            left: 70,
-                            bottom: 40,
-                            fontSize: "100%",
-                            fontWeight: "900",
-                            color: "green",
-                        }}
-                    >
-                        {c.age}
-                    </div>
-                </div>
-            ))}
-            <button
-                style={{
-                    display: "block",
-                    margin: "auto",
-                    width: "40%",
-                }}
-                onClick={(e) => {
-                    clearAll(e);
-                }}
-            >
-                Clear all
-            </button>
+                    Clear all
+                </button>
+            </div>
         </div>
     );
 }
