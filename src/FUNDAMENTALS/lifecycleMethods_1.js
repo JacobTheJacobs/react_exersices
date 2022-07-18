@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import "./styles.css";
 export default class LifeCycle1 extends React.Component {
     constructor(props) {
@@ -8,8 +7,6 @@ export default class LifeCycle1 extends React.Component {
             color: "white",
         };
     }
-
-    componentDidUpdate() {}
 
     changeColor = () => {
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -22,19 +19,25 @@ export default class LifeCycle1 extends React.Component {
 
     render() {
         return (
-            <div
+            <div><h1 className="title"> Body BG</h1>
+            <div    className="card-body">
+                
+                <div
+             
                 style={{
                     backgroundColor: this.state.color,
-                    height: "800px",
+                    height: "400px",
                 }}
             >
                 <button
-                    style={{ margin: "auto", display: "block " }}
+                    className="card-button"
                     onClick={this.changeColor}
                 >
                     Button color
                 </button>
             </div>
+            </div>   </div>
+           
         );
     }
 }

@@ -43,3 +43,21 @@
   box-shadow: 0px 0px 10px rgb(150, 150, 150);
   border: 1px solid rgb(175, 170, 241);
 }
+
+.card-input-div{
+  text-align: left;
+}
+
+.card-input-label{
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.card-input{
+  width: 90%;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid rgb(175, 170, 241);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgb(150, 150, 150);
+}

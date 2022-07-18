@@ -52,18 +52,21 @@ function App() {
                             <hr />
                             <StateEvent8 />
                             <hr />
+                            <h1>CONDITIONAL RENDERING</h1>
                             <ConditionRender1 />
                             <hr />
                             <ConditionRender2 />
                             <hr />
                             <ConditionRender3 />
                             <hr />
+                            <h1>LIFECYCLE METHODS</h1>
                             <LifeCycle1 />
                             <hr />
                             <LifeCycle2 />
                             <hr />
                             <LifeCycle3 />
                             <hr />
+                            <h1>FORMS</h1>
                             <Forms1 />
                             <hr />
                             <Forms2 />

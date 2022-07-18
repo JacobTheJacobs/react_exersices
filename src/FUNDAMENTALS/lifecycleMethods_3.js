@@ -51,10 +51,14 @@ export default class LifeCycle3 extends React.Component {
     render() {
         return (
             <>
-                <h1>Time Remaning</h1>
-                <h2>
+         
+                <h1 className="title">Countdown Timer</h1>
+                <div className="card-body">
+                <h1 className="title">Time Remaning</h1>
+                <h2 className="title">
                     {this.state.time.m}:{this.state.time.s}
                 </h2>
+                </div>
             </>
         );
     }

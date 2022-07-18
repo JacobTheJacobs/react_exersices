@@ -41,10 +41,9 @@ export default function ConditionRender1() {
             >
                 About
             </button>
-
             <div className="card-text">
-                {homePage ? <div className="title">Home </div> : null}
-                {aboutPage ? <div className="title">About </div> : null}
+                {homePage ? <><div className="title">Home </div> <div>Home Content</div></>: null}
+                {aboutPage ? <><div className="title">About </div> <div>Some Awesome about Content</div></> : null}
                 
             </div>
         </div>

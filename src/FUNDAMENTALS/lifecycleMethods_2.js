@@ -20,7 +20,7 @@ export default class LifeCycle2 extends React.Component {
         }, 5000);
     }
 
-    componentWillUnmount() {}
+
 
     changeColor = () => {
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -32,16 +32,18 @@ export default class LifeCycle2 extends React.Component {
 
     render() {
         return (
-            <>
-                {this.loaded ? (
+            <div>
+                <h1 className="title">Loading</h1>
+                <div className="card-body">
+                    {this.loaded ? (
                     <div
                         style={{
                             backgroundColor: this.state.color,
-                            height: "800px",
+                            height: "400px",
                         }}
                     >
                         <button
-                            style={{ margin: "auto", display: "block " }}
+                            className="card-button"
                             onClick={this.changeColor}
                         >
                             Button color
@@ -55,8 +57,9 @@ export default class LifeCycle2 extends React.Component {
                             alt="loading"
                         />
                     </>
-                )}
-            </>
+                )}</div>
+   
+            </div>
         );
     }
 }
